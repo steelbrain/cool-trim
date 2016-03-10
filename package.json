@@ -4,7 +4,8 @@
   "description": "Trim with maximum coolness",
   "main": "lib/index.js",
   "scripts": {
-    "test": "apm test"
+    "test": "apm test",
+    "compile": "ucompiler go"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/steelbrain/cool-trim/issues"
   },
-  "homepage": "https://github.com/steelbrain/cool-trim#readme"
+  "homepage": "https://github.com/steelbrain/cool-trim#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-steelbrain": "^2.0.1",
+    "ucompiler": "^3.1.8",
+    "ucompiler-plugin-babel": "^3.1.1"
+  }
 }
