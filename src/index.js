@@ -6,7 +6,8 @@ const trimNewLines = require('trim-newlines')
 const indentionRegex = /^ +/
 const allEmpty = /^ +$/
 
-function trim(subject: string): string {
+function trim(subject: string, indent: number = 0): string {
+  const prepend = ' '.repeat(indent)
   const toReturn = []
   const chunks = subject.split(/\r\n|\n/g)
   let leastIndention = Infinity
@@ -23,14 +24,17 @@ function trim(subject: string): string {
 
   if (leastIndention !== Infinity) {
     for (let i = 0; i < chunks.length; ++i) {
-      const chunk = chunks[i]
-      toReturn.push(chunk.substr(leastIndention))
+      const chunk = chunks[i].substr(leastIndention)
+      toReturn.push(chunk.length ? prepend + chunk : chunk)
     }
-
-    return trimNewLines(toReturn.join('\n'))
+  } else {
+    for (let i = 0; i < chunks.length; ++i) {
+      const chunk = chunks[i]
+      toReturn.push(chunk.length ? prepend + chunk : chunk)
+    }
   }
 
-  return trimNewLines(chunks.join('\n'))
+  return trimNewLines(toReturn.join('\n'))
 }
 
 module.exports = trim
