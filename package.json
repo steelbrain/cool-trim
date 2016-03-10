@@ -1,0 +1,24 @@
+{
+  "name": "cool-trim",
+  "version": "0.0.0",
+  "description": "Trim with maximum coolness",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "apm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steelbrain/cool-trim.git"
+  },
+  "keywords": [
+    "trim",
+    "string",
+    "text"
+  ],
+  "author": "steelbrain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steelbrain/cool-trim/issues"
+  },
+  "homepage": "https://github.com/steelbrain/cool-trim#readme"
+}
