@@ -27,4 +27,10 @@ describe('Trim', function() {
     expect(trim('  Hey\nMan')).toBe('  Hey\nMan')
     expect(trim('Main')).toBe('Main')
   })
+  it('adds indention on request', function() {
+    expect(trim(`
+      Everything is
+        awesome
+      `, 2)).toBe('  Everything is\n    awesome')
+  })
 })
