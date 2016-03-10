@@ -22,7 +22,10 @@
     "url": "https://github.com/steelbrain/cool-trim/issues"
   },
   "homepage": "https://github.com/steelbrain/cool-trim#readme",
-  "dependencies": {},
+  "dependencies": {
+    "trim-newlines": "^1.0.0",
+    "strip-indent": "^1.0.1"
+  },
   "devDependencies": {
     "babel-preset-steelbrain": "^2.0.1",
     "ucompiler": "^3.1.8",

@@ -2,21 +2,11 @@
 
 /* @flow */
 
-function trim(subject: string, padding: string = '  '): string {
-  const toReturn = []
-  const chunks = subject.split(/\r\n|\n/g)
+const trimNewLines = require('trim-newlines')
+const stripIndent = require('strip-indent')
 
-  toReturn.push(chunks[0].trim())
-
-  for (let i = 1; i < chunks.length; i++) {
-    let chunk = chunks[i].trim()
-    if (chunk.length) {
-      chunk = padding + chunk
-    }
-    toReturn.push(chunk)
-  }
-
-  return toReturn.join('\n')
+function trim(subject: string): string {
+  return stripIndent(trimNewLines(subject))
 }
 
 module.exports = trim
