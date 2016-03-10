@@ -23,8 +23,7 @@
   },
   "homepage": "https://github.com/steelbrain/cool-trim#readme",
   "dependencies": {
-    "trim-newlines": "^1.0.0",
-    "strip-indent": "^1.0.1"
+    "trim-newlines": "^1.0.0"
   },
   "devDependencies": {
     "babel-preset-steelbrain": "^2.0.1",
