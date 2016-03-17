@@ -28,7 +28,7 @@ trim(`
   Top
     Child
   Another Top
-`) ==== `Top
+`) === `Top
   Child
 AnotherTop`; // true
 ```
