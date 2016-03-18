@@ -24,11 +24,11 @@ module.exports = trim
 ```js
 import trim from 'cool-trim'
 
-trim(`
+trim`
   Top
     Child
   Another Top
-`) === `Top
+` === `Top
   Child
 AnotherTop`; // true
 ```
