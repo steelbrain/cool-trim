@@ -33,4 +33,15 @@ describe('Trim', function() {
         awesome
       `, 2)).toBe('  Everything is\n    awesome')
   })
+  it('works well with tagged templates', function() {
+    expect(trim`
+      Everything is
+        awesome
+    `).toBe('Everything is\n  awesome')
+    expect(trim`
+      Come on
+      ${'Dolly'}
+        Come on
+    `).toBe('Come on\nDolly\n  Come on')
+  })
 })

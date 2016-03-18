@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/steelbrain/cool-trim#readme",
   "dependencies": {
-    "tagged-template-literals": "^1.0.0",
+    "tagged-template-literals": "^1.0.1",
     "trim-newlines": "^1.0.0"
   },
   "devDependencies": {
