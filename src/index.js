@@ -2,11 +2,25 @@
 
 /* @flow */
 
+const tag = require('tagged-template-literals')
 const trimNewLines = require('trim-newlines')
 const indentionRegex = /^ +/
 const allEmpty = /^ +$/
 
-function trim(subject: string, indent: number = 0): string {
+function trim(strings: string | Array<string>, ...values: Array<any>): string {
+  let subject
+  let indent = 0
+  if (Array.isArray(strings)) {
+    subject = tag(strings, values)
+  } else if (typeof strings === 'string') {
+    subject = strings
+    if (typeof values[0] === 'number') {
+      indent = values[0]
+    }
+  } else {
+    throw new Error('Invalid string provided')
+  }
+
   const prepend = ' '.repeat(indent)
   const toReturn = []
   const chunks = subject.split(/\r\n|\n/g)
