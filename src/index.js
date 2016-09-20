@@ -4,8 +4,8 @@
 
 const tag = require('tagged-template-literals')
 const trimNewLines = require('trim-newlines')
-const indentionRegex = /^ +/
-const allEmpty = /^ +$/
+const indentionRegex = /^\s+/
+const allEmpty = /^\s+$/
 
 function trim(strings: string | Array<string>, ...values: Array<any>): string {
   let subject
