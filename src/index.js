@@ -1,9 +1,8 @@
-'use strict'
-
 /* @flow */
 
 const tag = require('tagged-template-literals')
 const trimNewLines = require('trim-newlines')
+
 const indentionRegex = /^\s+/
 const allEmpty = /^\s+$/
 
