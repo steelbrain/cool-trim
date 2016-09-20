@@ -4,8 +4,10 @@
   "description": "Trim with maximum coolness",
   "main": "lib/index.js",
   "scripts": {
-    "test": "apm test",
-    "compile": "ucompiler go"
+    "test": "(apm test) && (flow check) && (eslint . )",
+    "clean": "rm -rf lib",
+    "compile": "npm run clean && babel src --out-dir lib",
+    "watch": "npm run compile -- -w"
   },
   "repository": {
     "type": "git",
@@ -27,8 +29,9 @@
     "trim-newlines": "^1.0.0"
   },
   "devDependencies": {
-    "babel-preset-steelbrain": "^4.0.0",
-    "ucompiler": "^3.1.8",
-    "ucompiler-plugin-babel": "^3.1.1"
+    "babel-cli": "^6.10.1",
+    "babel-preset-steelbrain": "^4.0.1",
+    "eslint-config-steelbrain": "^2.0.0",
+    "flow-bin": "^0.32.0"
   }
 }
