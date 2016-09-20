@@ -44,4 +44,18 @@ describe('Trim', function() {
         Come on
     `).toBe('Come on\nDolly\n  Come on')
   })
+  it('it works with tab characters', function() {
+    expect(trim`
+		Everything is
+		awesome
+	`).toBe('Everything is\nawesome')
+    expect(trim`
+		Everything is
+			awesome
+		`).toBe('Everything is\n\tawesome')
+    expect(trim`
+	  Everything is
+		awesome
+	 `).toBe(' Everything is\nawesome')
+  })
 })
