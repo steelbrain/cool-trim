@@ -1,12 +1,7 @@
 Cool-Trim
 ========
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/steelbrain/cool-trim.svg)](https://greenkeeper.io/)
-
-Cool-Trim is the only thing you'll need to trim your strings
-
-![Everything's awesome](https://cloud.githubusercontent.com/assets/4278113/13688141/fec70458-e6dc-11e5-8e9b-fc39e9961cb5.gif)
-
+Cool-Trim is the an npm package to trim strings to have a consistent indention.
 
 ## Installation
 
