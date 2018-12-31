@@ -14,7 +14,7 @@ function trim(strings: string | Array<string>, ...values: Array<any>): string {
   } else if (typeof strings === 'string') {
     subject = strings
     if (typeof values[0] === 'number') {
-      indent = values[0]
+      ;[indent] = values
     }
   } else {
     throw new Error('Invalid string provided')

@@ -1,61 +1,88 @@
-'use babel'
+import test from 'ava'
+import trim from '..'
 
-import trim from '../'
-
-describe('Trim', function() {
-  it('removes leading and ending newlines', function() {
-    expect(trim(`
+test('removes leading and ending newlines', function(t) {
+  t.is(
+    trim(`
       Hey
 
-      `)).toBe('Hey')
-  })
-  it('removes extra whitespaces properly', function() {
-    expect(trim(`
+      `),
+    'Hey',
+  )
+})
+test('removes extra whitespaces properly', function(t) {
+  t.is(
+    trim(`
       Hey
       Man
-    `)).toBe('Hey\nMan')
-  })
-  it('acts as we expect it to', function() {
-    expect(trim(`
+    `),
+    'Hey\nMan',
+  )
+})
+test('acts as we expect it to', function(t) {
+  t.is(
+    trim(`
       Hey
         Man
-      `)).toBe('Hey\n  Man')
-  })
-  it('is smart', function() {
-    expect(trim('Hey\nMan')).toBe('Hey\nMan')
-    expect(trim('Hey\n  Man')).toBe('Hey\n  Man')
-    expect(trim('  Hey\nMan')).toBe('  Hey\nMan')
-    expect(trim('Main')).toBe('Main')
-  })
-  it('adds indention on request', function() {
-    expect(trim(`
+      `),
+    'Hey\n  Man',
+  )
+})
+test('is smart', function(t) {
+  t.is(trim('Hey\nMan'), 'Hey\nMan')
+  t.is(trim('Hey\n  Man'), 'Hey\n  Man')
+  t.is(trim('  Hey\nMan'), '  Hey\nMan')
+  t.is(trim('Main'), 'Main')
+})
+test('adds indention on request', function(t) {
+  t.is(
+    trim(
+      `
       Everything is
         awesome
-      `, 2)).toBe('  Everything is\n    awesome')
-  })
-  it('works well with tagged templates', function() {
-    expect(trim`
+      `,
+      2,
+    ),
+    '  Everything is\n    awesome',
+  )
+})
+test('works well with tagged templates', function(t) {
+  t.is(
+    trim`
       Everything is
         awesome
-    `).toBe('Everything is\n  awesome')
-    expect(trim`
+    `,
+    'Everything is\n  awesome',
+  )
+  t.is(
+    trim`
       Come on
       ${'Dolly'}
         Come on
-    `).toBe('Come on\nDolly\n  Come on')
-  })
-  it('it works with tab characters', function() {
-    expect(trim`
+    `,
+    'Come on\nDolly\n  Come on',
+  )
+})
+test('it works with tab characters', function(t) {
+  t.is(
+    trim`
 		Everything is
 		awesome
-	`).toBe('Everything is\nawesome')
-    expect(trim`
+	`,
+    'Everything is\nawesome',
+  )
+  t.is(
+    trim`
 		Everything is
 			awesome
-		`).toBe('Everything is\n\tawesome')
-    expect(trim`
+		`,
+    'Everything is\n\tawesome',
+  )
+  t.is(
+    trim`
 	  Everything is
 		awesome
-	 `).toBe(' Everything is\nawesome')
-  })
+	 `,
+    ' Everything is\nawesome',
+  )
 })
