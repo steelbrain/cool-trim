@@ -27,7 +27,7 @@
   "homepage": "https://github.com/steelbrain/cool-trim#readme",
   "dependencies": {
     "tagged-template-literals": "^1.0.1",
-    "trim-newlines": "^2.0.0"
+    "trim-newlines": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
